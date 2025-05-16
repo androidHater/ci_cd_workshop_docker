@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  demo:
+    build: .
+    container_name: ci_cd_demo
+    volumes:
+      - .:/app
+    command: ["npm", "run", "test"]
