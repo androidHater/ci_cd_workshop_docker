@@ -1,0 +1,63 @@
+{
+    "id": null,
+    "uid": "ci-cd-workshop",
+    "title": "CI/CD Monitoring Dashboard",
+    "timezone": "browser",
+    "schemaVersion": 36,
+    "version": 1,
+    "refresh": "10s",
+    "panels": [
+      {
+        "type": "stat",
+        "title": "Build Count",
+        "id": 1,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "build_total",
+            "legendFormat": "Builds",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "type": "stat",
+        "title": "Unit Test Duration (s)",
+        "id": 2,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "unit_test_duration_seconds",
+            "legendFormat": "Unit Tests",
+            "refId": "B"
+          }
+        ]
+      },
+      {
+        "type": "stat",
+        "title": "E2E Test Duration (s)",
+        "id": 3,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "e2e_test_duration_seconds",
+            "legendFormat": "E2E Tests",
+            "refId": "C"
+          }
+        ]
+      },
+      {
+        "type": "stat",
+        "title": "Test Error Rate",
+        "id": 4,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "test_error_rate",
+            "legendFormat": "Error Rate",
+            "refId": "D"
+          }
+        ]
+      }
+    ]
+  }

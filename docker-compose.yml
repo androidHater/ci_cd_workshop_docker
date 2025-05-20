@@ -1,4 +1,4 @@
-version: '3.8'
+
 services:
   demo:
     build: .
@@ -6,3 +6,49 @@ services:
     volumes:
       - .:/app
     command: ["npm", "run", "test"]
+    networks:
+      - workshop_net
+
+  e2e:
+    build: .
+    container_name: ci_cd_e2e
+    volumes:
+      - .:/app
+    command: ["npx", "playwright", "test"]
+    networks:
+      - workshop_net
+
+  metrics:
+    build:
+      context: .
+      dockerfile: Dockerfile.metrics
+    container_name: metrics
+    ports:
+      - "9229:9229"
+    networks:
+      - workshop_net
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./alert.rules.yml:/etc/prometheus/alert.rules.yml
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "19090:9090"
+    networks:
+      - workshop_net
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    volumes:
+      - ./provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./provisioning/datasources:/etc/grafana/provisioning/datasources
+    ports:
+      - "3000:3000"
+    networks:
+      - workshop_net
+
+networks:
+  workshop_net:

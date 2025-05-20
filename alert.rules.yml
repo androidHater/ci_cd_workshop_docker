@@ -1,0 +1,38 @@
+groups:
+  - name: demo-alerts
+    rules:
+      - alert: CiCdTestFailures
+        expr: ci_cd_demo_test_failures > 0
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Testy v CI/CD neprošly"
+          description: "Byl detekován alespoň jeden neúspěšný test v projektu."
+
+      - alert: HighTestDuration
+        expr: ci_cd_demo_test_duration_seconds > 5
+        for: 15s
+        labels:
+          severity: warning
+        annotations:
+          summary: "Testy běží příliš dlouho"
+          description: "Průměrná doba běhu testu překročila 5 sekund."
+
+      - alert: DemoInstanceDown
+        expr: up{job="ci_cd_demo"} == 0
+        for: 15s
+        labels:
+          severity: warning
+        annotations:
+          summary: "Testovací instance je nedostupná"
+          description: "Prometheus nevidí běžící kontejner s metrikami."
+
+      - alert: NoMetricsExported
+        expr: rate(ci_cd_demo_tests_total[1m]) == 0
+        for: 30s
+        labels:
+          severity: info
+        annotations:
+          summary: "Zdroj metrik negeneruje data"
+          description: "Po dobu 30s nebyla zachycena žádná nová metrika o testech."

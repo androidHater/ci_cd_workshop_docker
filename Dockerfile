@@ -10,6 +10,8 @@ COPY playwright.config.ts ./
 COPY src ./src
 COPY tests ./tests
 
-RUN npm install && npx playwright install
+RUN npx playwright install-deps && \
+    npm install && \
+    npx playwright install
 
-CMD ["npm", "run", "test"]
+CMD ["npx", "playwright", "test"]

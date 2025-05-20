@@ -1,0 +1,12 @@
+# Dockerfile.metrics
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Instalujeme pouze potřebnou závislost
+COPY ./src/metrics-server.js .
+RUN npm install prom-client
+
+EXPOSE 9229
+
+CMD ["node", "metrics-server.js"]
