@@ -1,0 +1,315 @@
+{
+    "id": null,
+    "uid": "team-comparison",
+    "title": "Team Performance Comparison",
+    "timezone": "browser",
+    "schemaVersion": 36,
+    "version": 1,
+    "refresh": "10s",
+    "panels": [
+      {
+        "type": "stat",
+        "title": "Roman \u2013 Deploy Frequency (per week)",
+        "id": 1,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "roman_deploy_frequency_per_week",
+            "legendFormat": "Roman",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 2,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Honza \u2013 Deploy Frequency (per week)",
+        "id": 2,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "honza_deploy_frequency_per_week",
+            "legendFormat": "Honza",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 2,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Roman \u2013 Lead Time to Production (s)",
+        "id": 3,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "roman_lead_time_to_production_seconds",
+            "legendFormat": "Roman",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 6,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Honza \u2013 Lead Time to Production (s)",
+        "id": 4,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "honza_lead_time_to_production_seconds",
+            "legendFormat": "Honza",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 6,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Roman \u2013 Closed Tasks (per week)",
+        "id": 5,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "roman_closed_tasks_per_week",
+            "legendFormat": "Roman",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 10,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Honza \u2013 Closed Tasks (per week)",
+        "id": 6,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "honza_closed_tasks_per_week",
+            "legendFormat": "Honza",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 10,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Roman \u2013 Bugs After Release",
+        "id": 7,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "roman_bugs_after_release",
+            "legendFormat": "Roman",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 14,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Honza \u2013 Bugs After Release",
+        "id": 8,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "honza_bugs_after_release",
+            "legendFormat": "Honza",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 14,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Roman \u2013 Incidents Count",
+        "id": 9,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "roman_incident_count",
+            "legendFormat": "Roman",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 18,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Honza \u2013 Incidents Count",
+        "id": 10,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "honza_incident_count",
+            "legendFormat": "Honza",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 18,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Roman \u2013 Code Coverage Ratio",
+        "id": 11,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "roman_code_coverage_ratio",
+            "legendFormat": "Roman",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 22,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Honza \u2013 Code Coverage Ratio",
+        "id": 12,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "honza_code_coverage_ratio",
+            "legendFormat": "Honza",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 22,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Roman \u2013 Code Smells Count",
+        "id": 13,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "roman_code_smells_count",
+            "legendFormat": "Roman",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 26,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Honza \u2013 Code Smells Count",
+        "id": 14,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "honza_code_smells_count",
+            "legendFormat": "Honza",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 26,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Roman \u2013 SLO Violations Count",
+        "id": 15,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "roman_slo_violations_count",
+            "legendFormat": "Roman",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 30,
+          "w": 12,
+          "h": 4
+        }
+      },
+      {
+        "type": "stat",
+        "title": "Honza \u2013 SLO Violations Count",
+        "id": 16,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "honza_slo_violations_count",
+            "legendFormat": "Honza",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 30,
+          "w": 12,
+          "h": 4
+        }
+      }
+    ]
+  }

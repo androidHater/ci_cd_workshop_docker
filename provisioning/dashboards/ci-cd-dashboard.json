@@ -1,63 +1,167 @@
 {
-    "id": null,
-    "uid": "ci-cd-workshop",
-    "title": "CI/CD Monitoring Dashboard",
-    "timezone": "browser",
-    "schemaVersion": 36,
-    "version": 1,
-    "refresh": "10s",
-    "panels": [
-      {
-        "type": "stat",
-        "title": "Build Count",
-        "id": 1,
-        "datasource": "Prometheus",
-        "targets": [
-          {
-            "expr": "build_total",
-            "legendFormat": "Builds",
-            "refId": "A"
-          }
-        ]
-      },
-      {
-        "type": "stat",
-        "title": "Unit Test Duration (s)",
-        "id": 2,
-        "datasource": "Prometheus",
-        "targets": [
-          {
-            "expr": "unit_test_duration_seconds",
-            "legendFormat": "Unit Tests",
-            "refId": "B"
-          }
-        ]
-      },
-      {
-        "type": "stat",
-        "title": "E2E Test Duration (s)",
-        "id": 3,
-        "datasource": "Prometheus",
-        "targets": [
-          {
-            "expr": "e2e_test_duration_seconds",
-            "legendFormat": "E2E Tests",
-            "refId": "C"
-          }
-        ]
-      },
-      {
-        "type": "stat",
-        "title": "Test Error Rate",
-        "id": 4,
-        "datasource": "Prometheus",
-        "targets": [
-          {
-            "expr": "test_error_rate",
-            "legendFormat": "Error Rate",
-            "refId": "D"
-          }
-        ]
-      }
-    ]
-  }
+  "id": null,
+  "uid": "ci-cd-workshop",
+  "title": "CI/CD Monitoring Dashboard",
+  "timezone": "browser",
+  "schemaVersion": 36,
+  "version": 1,
+  "refresh": "10s",
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Build Count",
+      "id": 1,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "build_total",
+          "legendFormat": "Builds",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Unit Test Duration (s)",
+      "id": 2,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "unit_test_duration_seconds",
+          "legendFormat": "Unit Tests",
+          "refId": "B"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "E2E Test Duration (s)",
+      "id": 3,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "e2e_test_duration_seconds",
+          "legendFormat": "E2E Tests",
+          "refId": "C"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Test Error Rate",
+      "id": 4,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "test_error_rate",
+          "legendFormat": "Error Rate",
+          "refId": "D"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Deploys per Week",
+      "id": 5,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "deploy_frequency_per_week",
+          "legendFormat": "Deploys",
+          "refId": "E"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Lead Time to Prod (s)",
+      "id": 6,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "lead_time_to_production_seconds",
+          "legendFormat": "Lead Time",
+          "refId": "F"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Closed Tasks/Week",
+      "id": 7,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "closed_tasks_per_week",
+          "legendFormat": "Tasks",
+          "refId": "G"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Bugs After Release",
+      "id": 8,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "bugs_after_release",
+          "legendFormat": "Bugs",
+          "refId": "H"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Incidents",
+      "id": 9,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "incident_count",
+          "legendFormat": "Incidents",
+          "refId": "I"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Code Coverage (%)",
+      "id": 10,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "code_coverage_ratio * 100",
+          "legendFormat": "Coverage %",
+          "refId": "J"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Code Smells",
+      "id": 11,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "code_smells_count",
+          "legendFormat": "Smells",
+          "refId": "K"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "SLO Violations",
+      "id": 12,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "slo_violations_count",
+          "legendFormat": "Violations",
+          "refId": "L"
+        }
+      ]
+    }
+  ]
+}
