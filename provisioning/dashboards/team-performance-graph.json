@@ -1,0 +1,201 @@
+{
+    "id": null,
+    "uid": "team-performance-graph",
+    "title": "Team Performance \u2013 Graphs",
+    "timezone": "browser",
+    "schemaVersion": 36,
+    "version": 1,
+    "refresh": "10s",
+    "panels": [
+      {
+        "type": "barchart",
+        "title": "Deploy Frequency",
+        "id": 1,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "roman_deploy_frequency_per_week",
+            "legendFormat": "Roman",
+            "refId": "A"
+          },
+          {
+            "expr": "honza_deploy_frequency_per_week",
+            "legendFormat": "Honza",
+            "refId": "B"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 8
+        },
+        "options": {
+          "orientation": "horizontal",
+          "showValue": "auto",
+          "stacking": {
+            "mode": "none"
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "none",
+            "decimals": 0
+          },
+          "overrides": []
+        }
+      },
+      {
+        "type": "barchart",
+        "title": "Lead Time to Production",
+        "id": 2,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "roman_lead_time_to_production_seconds",
+            "legendFormat": "Roman",
+            "refId": "A"
+          },
+          {
+            "expr": "honza_lead_time_to_production_seconds",
+            "legendFormat": "Honza",
+            "refId": "B"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 0,
+          "w": 12,
+          "h": 8
+        },
+        "options": {
+          "orientation": "horizontal",
+          "showValue": "auto",
+          "stacking": {
+            "mode": "none"
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "none",
+            "decimals": 0
+          },
+          "overrides": []
+        }
+      },
+      {
+        "type": "barchart",
+        "title": "Closed Tasks",
+        "id": 3,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "roman_closed_tasks_per_week",
+            "legendFormat": "Roman",
+            "refId": "A"
+          },
+          {
+            "expr": "honza_closed_tasks_per_week",
+            "legendFormat": "Honza",
+            "refId": "B"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 8,
+          "w": 12,
+          "h": 8
+        },
+        "options": {
+          "orientation": "horizontal",
+          "showValue": "auto",
+          "stacking": {
+            "mode": "none"
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "none",
+            "decimals": 0
+          },
+          "overrides": []
+        }
+      },
+      {
+        "type": "barchart",
+        "title": "Bugs After Release",
+        "id": 4,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "roman_bugs_after_release",
+            "legendFormat": "Roman",
+            "refId": "A"
+          },
+          {
+            "expr": "honza_bugs_after_release",
+            "legendFormat": "Honza",
+            "refId": "B"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 8,
+          "w": 12,
+          "h": 8
+        },
+        "options": {
+          "orientation": "horizontal",
+          "showValue": "auto",
+          "stacking": {
+            "mode": "none"
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "none",
+            "decimals": 0
+          },
+          "overrides": []
+        }
+      },
+      {
+        "type": "barchart",
+        "title": "Incident Count",
+        "id": 5,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "roman_incident_count",
+            "legendFormat": "Roman",
+            "refId": "A"
+          },
+          {
+            "expr": "honza_incident_count",
+            "legendFormat": "Honza",
+            "refId": "B"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 16,
+          "w": 12,
+          "h": 8
+        },
+        "options": {
+          "orientation": "horizontal",
+          "showValue": "auto",
+          "stacking": {
+            "mode": "none"
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "none",
+            "decimals": 0
+          },
+          "overrides": []
+        }
+      }
+    ]
+  }
